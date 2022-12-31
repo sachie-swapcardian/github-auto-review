@@ -54,7 +54,7 @@ export class AutoReviewInstance {
   async main() {
     try {
       const filesData = await this.getFilesData();
-      const filesInPR = filesData.map((content) => content.filename);
+      // const filesInPR = filesData.map((content) => content.filename);
       this.addCommentToPR(`Test comment`);
     } catch (e) {
       console.log("Exception in auto reviewer assignment");
