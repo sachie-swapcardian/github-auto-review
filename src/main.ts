@@ -11,7 +11,6 @@ export class AutoReviewInstance {
   owner: string;
   repo: string;
   pullNumber: number;
-  PAT: string;
   octokit: any;
 
   constructor({ owner, repo, pullNumber, PAT }: ConfigData) {
@@ -54,6 +53,7 @@ export class AutoReviewInstance {
   async main() {
     try {
       const filesData = await this.getFilesData();
+      console.log("filesData", filesData);
       // const filesInPR = filesData.map((content) => content.filename);
       this.addCommentToPR(`Test comment`);
     } catch (e) {
