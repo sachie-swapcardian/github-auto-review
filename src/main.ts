@@ -1,4 +1,4 @@
-import { Octokit } from "@octokit/rest";
+const Octokit = require("@octokit/rest");
 
 interface ConfigData {
   owner: string;
