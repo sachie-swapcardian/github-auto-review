@@ -1,3 +1,5 @@
 node_modules
 lib
 build
+src/main.js
+src/scripts/setup.js

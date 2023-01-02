@@ -3,7 +3,7 @@
     "target": "esnext",
     "esModuleInterop": true, 
     "module": "commonjs",
-    "outDir": "build",
+    "outDir": "lib",
   },
   "type": "module",
   "ts-node": {
