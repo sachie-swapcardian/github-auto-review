@@ -1,11 +1,11 @@
 {
   "name": "github-auto-review",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "src/main.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc src/main.ts && mkdir -p lib && mv src/main.js lib/",
+    "build": "tsc",
     "dev": "ts-node src/main.ts"
   },
   "author": "",

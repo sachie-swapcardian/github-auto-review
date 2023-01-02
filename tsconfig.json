@@ -2,7 +2,8 @@
   "compilerOptions": {
     "target": "es6", 
     "esModuleInterop": true, 
-    "module": "commonjs"
+    "module": "commonjs",
+    "outDir": "build"
   },
   "type": "module",
   "ts-node": {
