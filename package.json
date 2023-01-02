@@ -1,8 +1,8 @@
 {
   "name": "github-auto-review",
-  "version": "1.0.8",
+  "version": "2.0.0",
   "description": "",
-  "main": "src/main.js",
+  "main": "lib/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
