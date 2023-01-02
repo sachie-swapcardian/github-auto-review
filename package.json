@@ -1,6 +1,6 @@
 {
   "name": "github-auto-review",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "main": "src/main.ts",
   "scripts": {
@@ -14,7 +14,7 @@
     "@types/lodash": "^4.14.188",
     "@types/node": "^18.11.8",
     "codeowners": "^5.1.1",
-    "ts-node": "^10.9.1",
+    "ts-node": "^8.0.0",
     "tslib": "^2.4.1",
     "typescript": "^4.8.4"
   },
