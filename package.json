@@ -1,9 +1,9 @@
 {
   "name": "github-auto-review",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "",
   "main": "lib/main",
-  "types": "lib/index.d.ts",
+  "types": "lib/main.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
