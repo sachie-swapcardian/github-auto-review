@@ -1,4 +1,3 @@
-import { Octokit } from "@octokit/rest";
 import { ProbotOctokit } from "probot";
 // import { createAppAuth } from "@octokit/auth-app";
 // import { readFileSync } from "fs";
