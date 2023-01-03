@@ -1,25 +1,48 @@
 import { Octokit } from "@octokit/rest";
+// import { createAppAuth } from "@octokit/auth-app";
+// import { readFileSync } from "fs";
 
 interface ConfigData {
   owner: string;
   repo: string;
   pullNumber: number;
-  PAT: string;
+  appId: number;
+  privateKey: string;
+  installationId: number;
+  octokitContext: InstanceType<typeof Octokit>;
 }
 
 export class AutoReviewInstance {
   owner: string;
   repo: string;
   pullNumber: number;
-  octokit: any;
+  appId: number;
+  privateKey: string;
+  installationId: number;
+  octokitContext: InstanceType<typeof Octokit>;
+  octokit: InstanceType<typeof Octokit>;
 
-  constructor({ owner, repo, pullNumber, PAT }: ConfigData) {
+  constructor({
+    owner,
+    repo,
+    pullNumber,
+    octokitContext,
+    appId,
+    installationId,
+    privateKey,
+  }: ConfigData) {
     this.owner = owner;
     this.repo = repo;
     this.pullNumber = pullNumber;
-    this.octokit = new Octokit({
-      auth: PAT,
-    });
+    this.octokit = octokitContext;
+    // new Octokit({
+    //   authStrategy: createAppAuth,
+    //   auth: {
+    //     appId,
+    //     privateKey: readFileSync("/Users/sachie/sach/my-probot-app/probot.pem"),
+    //     installationId,
+    //   },
+    // });
   }
 
   async addCommentToPR(body: string) {
@@ -57,7 +80,7 @@ export class AutoReviewInstance {
       // const filesInPR = filesData.map((content) => content.filename);
       this.addCommentToPR(`Test comment`);
     } catch (e) {
-      console.log("Exception in auto reviewer assignment");
+      console.log("Exception in auto reviewer assignment", JSON.stringify(e));
     }
   }
 }
