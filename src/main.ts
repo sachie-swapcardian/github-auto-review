@@ -1,5 +1,5 @@
 import { Octokit } from "@octokit/rest";
-// import { ProbotOctokit } from "probot";
+import { ProbotOctokit } from "probot";
 // import { createAppAuth } from "@octokit/auth-app";
 // import { readFileSync } from "fs";
 
@@ -10,7 +10,7 @@ interface ConfigData {
   appId: number;
   privateKey: string;
   installationId: number;
-  octokitContext: any;
+  octokitContext: InstanceType<typeof ProbotOctokit>;
 }
 
 export class AutoReviewInstance {
@@ -20,8 +20,8 @@ export class AutoReviewInstance {
   appId: number;
   privateKey: string;
   installationId: number;
-  octokitContext: any;
-  octokit: InstanceType<typeof Octokit>;
+  octokitContext: InstanceType<typeof ProbotOctokit>;
+  octokit: InstanceType<typeof ProbotOctokit>;
 
   constructor({
     owner,
