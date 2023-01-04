@@ -1,48 +1,23 @@
 import { ProbotOctokit } from "probot";
-// import { createAppAuth } from "@octokit/auth-app";
-// import { readFileSync } from "fs";
 
 interface ConfigData {
   owner: string;
   repo: string;
   pullNumber: number;
-  appId: number;
-  privateKey: string;
-  installationId: number;
-  octokitContext: InstanceType<typeof ProbotOctokit>;
+  octokit: InstanceType<typeof ProbotOctokit>;
 }
 
 export class AutoReviewInstance {
   owner: string;
   repo: string;
   pullNumber: number;
-  appId: number;
-  privateKey: string;
-  installationId: number;
-  octokitContext: InstanceType<typeof ProbotOctokit>;
   octokit: InstanceType<typeof ProbotOctokit>;
 
-  constructor({
-    owner,
-    repo,
-    pullNumber,
-    octokitContext,
-    appId,
-    installationId,
-    privateKey,
-  }: ConfigData) {
+  constructor({ owner, repo, pullNumber, octokit }: ConfigData) {
     this.owner = owner;
     this.repo = repo;
     this.pullNumber = pullNumber;
-    this.octokit = octokitContext;
-    // new Octokit({
-    //   authStrategy: createAppAuth,
-    //   auth: {
-    //     appId,
-    //     privateKey: readFileSync("/Users/sachie/sach/my-probot-app/probot.pem"),
-    //     installationId,
-    //   },
-    // });
+    this.octokit = octokit;
   }
 
   async addCommentToPR(body: string) {
