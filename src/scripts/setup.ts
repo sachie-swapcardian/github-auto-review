@@ -17,7 +17,7 @@ function Setup() {
     owner: "sachie-swapcardian",
     repo: "code-ownership-sample",
     pullNumber: 54,
-    octokitContext: null,
+    octokit: null,
   });
 
   obj.main();
